@@ -1,0 +1,28 @@
+{% include  "header.html" %}
+
+{% if msg %}
+    <h3 class="h3">{{ msg }}</h3>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col" class="centerTableCol">Telephone Number</th>
+                <th scope="col" class="centerTableCol">Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="centerTableCol">{{ new_phone.phone_number }}</td>
+                <td class="centerTableCol">{{ new_phone.get_phone_type_display }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr>
+    <a href="{{ next }}">
+        <button class="btn btn-primary">Back</button>
+    </a>
+{% else %}
+Nothing here .......!!!! Check code!
+
+{% endif %}
+
+{% include "footer.html" %}

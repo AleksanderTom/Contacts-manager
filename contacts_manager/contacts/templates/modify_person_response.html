@@ -1,0 +1,47 @@
+{% include  "header.html" %}
+
+{% if msg %}
+     <h3 class="h3 h3Colors">{{ msg }}</h3>
+    <div class="userDetailsDiv">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col" class="centerTableCol">Label</th>
+                <th scope="col" class="centerTableCol">Basic Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Name</td>
+                <td>{{ modified_person.name }}</td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td>{{ modified_person.surname }}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{ modified_person.description }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="divAvatar">
+        {% if modified_person.picture %}
+            <img id="avatarImage"  src="{{ modified_person.picture.url }}" alt="{{ modified_person.name }} {{ modified_person.surname }}">
+        {% else %}
+            <div class="noPicture">
+                <i class="fas fa-user-alt"></i>
+            </div>
+        {% endif %}
+    </div>
+    <hr>
+    <a href="{{ next }}">
+        <button class="btn btn-primary">Back</button>
+    </a>
+{% else %}
+Nothing here .......!!!! Check code!
+
+{% endif %}
+
+{% include "footer.html" %}
